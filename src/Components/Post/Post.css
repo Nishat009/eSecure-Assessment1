@@ -1,0 +1,15 @@
+.card-body:hover{
+   background-color:#F6F6F6;
+    text-decoration: none;
+}
+.card-body{
+    height:250px;
+}
+.card{
+    height:30rem;
+    
+}
+img{
+    height: 170px;
+     width: 100%;
+}
