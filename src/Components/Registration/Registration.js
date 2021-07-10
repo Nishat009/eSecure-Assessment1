@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import icon from "../../images/icon.png";
 import "./Registration.css";
 const Registration = () => {
-  const[errorMessage, setErrorMessage]=useState("")
+  const [errorMessage, setErrorMessage] = useState("");
   const [information, setInformation] = useState({
     email: "",
     address: "",
@@ -18,32 +18,37 @@ const Registration = () => {
   const phoneValidation = (phoneNumber) => {
     const isPhoneNumValid = /^(?:\+88|88)?(01[3-9]\d{8})$/.test(phoneNumber);
     return isPhoneNumValid;
-}
+  };
   const emailValidation = (email) => {
     const isPhoneEmailValid = /\S+@\S+\.\S+/.test(email);
     return isPhoneEmailValid;
-}
-
+  };
 
   const handleBlur = (e) => {
-    
-     
-      const newInfo = { ...information };
-      newInfo[e.target.name] = e.target.value;
-      setInformation(newInfo);
-    
-  }
+    const newInfo = { ...information };
+    newInfo[e.target.name] = e.target.value;
+    setInformation(newInfo);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!information.address && !information.district &&!information.userName &&!emailValidation(information.email) &&!phoneValidation(information.phoneNumber) &&!information.firstName &&!information.gender &&!information.lastName ) {
-        setErrorMessage("Enter Your Correct Information")
-        return;
+    if (
+      !information.address &&
+      !information.district &&
+      !information.userName &&
+      !emailValidation(information.email) &&
+      !phoneValidation(information.phoneNumber) &&
+      !information.firstName &&
+      !information.gender &&
+      !information.lastName
+    ) {
+      setErrorMessage("Enter Your Correct Information");
+      return;
     }
-    
-    console.log(information)
-}
+
+    console.log(information);
+  };
 
   return (
     <section className="container-fluid row mx-0 px-0">
@@ -196,7 +201,21 @@ const Registration = () => {
           </div>
 
           <div className="col-md-12  align-items-center">
-            <input type="submit" disabled={!emailValidation(information.email) || !information.userName || !information.firstName || !phoneValidation(information.phoneNumber)||!information.address ||!information.lastName ||  !information.district || !information.gender } className="mt-3 btn btn-info w-100" />
+            <input
+              type="submit"
+              disabled={
+                !emailValidation(information.email) ||
+                !information.userName ||
+                !information.firstName ||
+                !phoneValidation(information.phoneNumber) ||
+                !information.address ||
+                !information.lastName ||
+                !information.district ||
+                !information.gender
+              }
+              style={{ backgroundColor: "#DCDCDC" }}
+              className="mt-3 btn w-100"
+            />
           </div>
         </form>
       </div>
