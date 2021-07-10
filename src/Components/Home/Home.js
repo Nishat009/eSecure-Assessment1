@@ -10,7 +10,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);
-        console.log(data);
+        
       });
   }, []);
   const allPost = posts.slice(0, 12);
