@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import "./Nav.css";
 const Nav = () => {
   return (
@@ -9,12 +10,12 @@ const Nav = () => {
         <Navbar expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className=" ">
-            <a href="/registration" className="nav-menu">
+            <Link to="/registration" className="nav-menu">
               USER REGISTRATION
-            </a>
-            <a href="/post" className="nav-menu">
+            </Link>
+            <Link to="/post" className="nav-menu">
               POSTS
-            </a>
+            </Link>
           </Navbar.Collapse>
         </Navbar>
       </div>
