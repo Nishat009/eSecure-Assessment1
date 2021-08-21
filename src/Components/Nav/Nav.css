@@ -1,12 +1,12 @@
 .nav-background {
   background-color: #3f51b5;
 }
-.nav-menu {
+.nav-link {
   color: #fff;
   padding-left: 15px;
   padding-right:4px;
 }
-.nav-menu:hover {
+.nav-link:hover {
   color: #ad9f7a;
   text-decoration: none;
 }
